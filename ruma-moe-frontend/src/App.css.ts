@@ -7,7 +7,7 @@ export const mainStyle = style({
     justifyContent: 'space-between',
     display: 'flex',
     '@media': {
-        'screen and (min-width: 768px)': {
+        'screen and (max-width: 1440px)': {
             flexDirection: 'column',
         }
     }
