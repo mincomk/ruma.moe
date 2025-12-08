@@ -7,6 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-write-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-body-size: 1024g
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
   name: web-ingress
   namespace: ruma-moe
