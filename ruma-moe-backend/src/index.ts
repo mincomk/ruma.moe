@@ -7,12 +7,20 @@ import { fastify } from 'fastify';
 import { createClient } from 'redis';
 import winston from 'winston';
 import z from 'zod';
+import * as promClient from 'prom-client'
 
 const logger = winston.createLogger({
     transports: [
         new winston.transports.Console(),
     ]
 });
+
+const registry = new promClient.Registry()
+
+const requestCounter = new promClient.Counter({ name: 'ruma_requests', help: 'Ruma requests' })
+requestCounter.inc(0)
+
+registry.registerMetric(requestCounter)
 
 const config = process.env.REDIS_URL ? { url: process.env.REDIS_URL } : undefined
 
@@ -51,6 +59,10 @@ app.register(async (app) => {
 
 const incSchema = z.object({ name: z.string() })
 
+app.get('/metrics', async () => {
+    return await registry.metrics()
+})
+
 app.post('/inc', {
     schema: {
         body: {
@@ -67,6 +79,8 @@ app.post('/inc', {
     if (parseResult.success) {
         const name = parseResult.data.name;
         incrementCounter(name).catch(err => logger.warn("increment counter error: ", err))
+
+        requestCounter.inc()
 
         return { success: true }
     } else {
