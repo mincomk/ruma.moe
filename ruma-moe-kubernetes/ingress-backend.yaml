@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-write-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-body-size: 1024g
-    cert-manager.io/cluster-issuer: "letsencrypt-prod2"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
   name: backend-ingress
   namespace: ruma-moe
 spec:
