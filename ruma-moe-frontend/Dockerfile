@@ -7,11 +7,14 @@ COPY . .
 RUN npm i && npm run build
 
 
-FROM nginx:stable-alpine
+FROM node:22-alpine
 
-RUN rm -rf /usr/share/nginx/html/*
-WORKDIR /usr/share/nginx/html
+WORKDIR /app
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /app
 
 EXPOSE 80
+
+RUN npm i http-server
+
+CMD ["npx", "http-server", "/app", "--host", "--port", "80"]
