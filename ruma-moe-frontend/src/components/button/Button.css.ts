@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "../../styles/theme.css";
 
 export const buttonBase = style({
-    padding: `${vars.spacing.md} ${vars.spacing.xl}`,
+    padding: `${vars.spacing.md} ${vars.spacing.lg}`,
     borderRadius: vars.borderRadius.md,
     cursor: 'pointer',
     border: 'none',

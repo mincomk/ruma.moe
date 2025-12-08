@@ -26,10 +26,10 @@ function App() {
 
     return (
         <>
-            <TopBar />
+            <TopBar onCheek={incCheeks} />
             <main className={mainStyle}>
                 <div className={leftBox}>
-                    <img src={rumaText} alt="rumarumahane" onClick={incCheeks} />
+                    <img src={rumaText} alt="rumarumahane" />
 
                     <div className={mainText}> 이곳은 <span className={pinkText}>귀여운</span> 루마의 <span className={redText}>은밀한</span> 사이트입니다. </div>
 
