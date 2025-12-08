@@ -13,7 +13,7 @@ spec:
       labels:
         app: frontend
     spec:
-      imagePullPolicy: Always
       containers:
         - name: frontend
+          imagePullPolicy: Always
           image: registry.walruslab.org/pub/ruma-moe-frontend
