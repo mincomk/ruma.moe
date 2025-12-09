@@ -1,5 +1,5 @@
-import { style } from "@vanilla-extract/css";
-import { vars } from "../../styles/theme.css";
+import { style } from '@vanilla-extract/css';
+import { vars } from '../../styles/theme.css';
 
 export const cardStyles = style({
     borderStyle: 'solid',
@@ -10,9 +10,9 @@ export const cardStyles = style({
     display: 'flex',
     flexDirection: 'column',
     gap: vars.spacing.md,
-})
+});
 
 export const titleStyles = style({
     fontSize: vars.fontSize.xs,
-    fontWeight: vars.fontWeight.black
-})
+    fontWeight: vars.fontWeight.black,
+});

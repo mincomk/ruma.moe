@@ -1,4 +1,4 @@
-import { createGlobalTheme } from "@vanilla-extract/css";
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const vars = createGlobalTheme(':root', {
     color: {
@@ -18,7 +18,7 @@ export const vars = createGlobalTheme(':root', {
         xl: '3.75rem',
     },
     size: {
-        topbarHeight: '75px'
+        topbarHeight: '75px',
     },
     borderRadius: {
         lg: '24px',
@@ -39,5 +39,5 @@ export const vars = createGlobalTheme(':root', {
     effect: {
         hoverFilter: 'brightness(90%)',
         activeFilter: 'brightness(80%)',
-    }
-})
+    },
+});

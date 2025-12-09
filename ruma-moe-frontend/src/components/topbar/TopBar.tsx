@@ -1,5 +1,5 @@
-import closeruma from '../../assets/closeruma.png'
-import { text, topBar } from './TopBar.css'
+import closeruma from '../../assets/closeruma.png';
+import { text, topBar } from './TopBar.css';
 
 export function TopBar({ onCheek }: { onCheek: () => void }) {
     return (
@@ -7,5 +7,5 @@ export function TopBar({ onCheek }: { onCheek: () => void }) {
             <img src={closeruma} alt="ruma closed" onClick={onCheek} />
             <div className={text}>ruma.moe</div>
         </header>
-    )
+    );
 }
